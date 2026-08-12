@@ -1,0 +1,71 @@
+.theme {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+body {
+  transition: background 0.5s ease-in-out;
+}
+
+body.light {
+  background: #f5f5f5; 
+  color: #333;
+}
+
+body.dark {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.theme__toggle-wrap {
+  width: 50px;
+  height: 25px;
+
+  
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  position: relative;
+  transition: background 0.3s ease-in-out;
+}
+
+.theme__icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.sun {
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px rgba(255, 223, 0, 0.6);
+  background: radial-gradient(circle at center, #ffeb3b 0%, #fbc02d 100%);
+  position: absolute;
+}
+
+/* القمر */
+.moon {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  transform: translateX(24px);
+  opacity: 0;
+}
+
+
+.theme__toggle:checked + .theme__icon .sun {
+  transform: translateX(-15px);
+  opacity: 0;
+}
+
+.theme__toggle:checked + .theme__icon .moon {
+  transform: translateX(0);
+  opacity: 1;
+}
